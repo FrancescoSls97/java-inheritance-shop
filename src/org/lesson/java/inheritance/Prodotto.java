@@ -13,7 +13,7 @@ public class Prodotto {
     protected int iva;
 
     //costruttore
-    public Prodotto (int codice, String nome, String marca, double prezzo, int iva){
+    public Prodotto (String nome, String marca, double prezzo, int iva){
         Random random = new Random(99999);
         this.codice = random.nextInt();
         this.nome = nome;
@@ -71,5 +71,13 @@ public class Prodotto {
     this.iva = iva;
    }
 
+   //metodo calcolo prezzo
+   public double getPrezzoTotale(){
+    return prezzo + (prezzo * iva / 100);
+   }
 
+   //metodo info prodotto
+   public String getInfo(){
+    return nome + " " + marca + " " + getPrezzoTotale() + "$";
+   }
 }
