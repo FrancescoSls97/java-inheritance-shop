@@ -6,5 +6,8 @@ public class Main {
     Prodotto play = new Prodotto("PlayStation 5", "Sony", 500, 22);
 
     System.out.println(play.getInfo());
+
+    Smarthphone realMe = new Smarthphone("GT Neo", "RealMe", 650, 22, 520);
+    System.out.println(realMe.getSmartphoneInfo());
  }
 }

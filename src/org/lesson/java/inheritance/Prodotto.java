@@ -6,7 +6,7 @@ import java.util.Random;
 public class Prodotto {
 
     //attributi di classe
-    protected int codice;
+    protected int codiceProdotto;
     protected String nome;
     protected String marca;
     protected double prezzo;
@@ -14,8 +14,8 @@ public class Prodotto {
 
     //costruttore
     public Prodotto (String nome, String marca, double prezzo, int iva){
-        Random random = new Random(99999);
-        this.codice = random.nextInt();
+        Random random = new Random();
+        this.codiceProdotto = random.nextInt(99999);
         this.nome = nome;
         this.marca = marca;
         this.prezzo = prezzo;
@@ -24,12 +24,12 @@ public class Prodotto {
 
    // getter e setter codice
 
-   public int getCodice(){
-    return this.codice;
+   public int getCodiceProdotto(){
+    return this.codiceProdotto;
    }
 
    private void setCodice(int codice){
-    this.codice = codice;
+    this.codiceProdotto = codice;
    }
 
    // getter e setter nome
@@ -78,6 +78,7 @@ public class Prodotto {
 
    //metodo info prodotto
    public String getInfo(){
-    return nome + " " + marca + " " + getPrezzoTotale() + "$";
+    return "Codice Prodotto-" 
+    + codiceProdotto + " " + nome + " " + marca + " " + getPrezzoTotale() + "$";
    }
 }
