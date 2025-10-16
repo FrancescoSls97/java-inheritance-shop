@@ -29,16 +29,17 @@ public class Televisore extends Prodotto {
 
     public void setSmart(boolean smart) {
         this.smart = smart;
-
-        if (smart == false) {
-            System.out.println("No");
-        } else {
-            System.out.println("Si");
-        } 
     }
+
+    //metodo per dire se la tv sia Smart
+    public String getSmartText() {
+    return this.smart ? "Si" : "No";
+}
+
+
 
     // metodo info televisore
     public String getTeleInfo() {
-        return "TV: " + getInfo() + " " + getPollici() + "pollici " + "SmartTV:" + getSmart();
+        return "TV: " + getInfo() + " " + getPollici() + "pollici " + "SmartTV:" + getSmartText();
     }
 }

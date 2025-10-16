@@ -20,5 +20,11 @@ public class Main {
     System.out.println(samsung.getTeleInfo());
     Televisore philips = new Televisore("SimpleTV", "Philips", 450, 22, 55, false);
     System.out.println(philips.getTeleInfo());
+
+    //sottoclasse cuffie
+    Cuffie razer = new Cuffie("PhytonX3500", "Razer", 140, 22, "Verde/Nero", true);
+    System.out.println(razer.getInfoCuffie());
+    Cuffie logitech = new Cuffie("G750", "Logitech", 35, 22, "Bianco/Blu", false);
+    System.out.println(logitech.getInfoCuffie());
  }
 }
