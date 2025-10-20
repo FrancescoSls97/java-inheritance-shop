@@ -73,7 +73,8 @@ public class Prodotto {
    }
 
    // metodo info prodotto
-   public String getInfo() {
+   @Override
+   public String toString() {
       return "Codice Prodotto-"
             + codiceProdotto + " " + nome + " " + marca + " " + getPrezzoTotale() + "$";
    }

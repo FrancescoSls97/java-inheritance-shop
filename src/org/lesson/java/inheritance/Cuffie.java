@@ -37,7 +37,8 @@ public class Cuffie extends Prodotto {
     }
 
     // metodo info cuffie
-    public String getInfoCuffie() {
-        return "Cuffie: " + getInfo() + " Colore:" + getColore() + " Modello:" + getWirelessText();
+    @Override
+    public String toString() {
+        return "Cuffie: " + super.toString() + " Colore:" + getColore() + " Modello:" + getWirelessText();
     }
 }

@@ -35,9 +35,10 @@ public class Smarthphone extends Prodotto{
             this.grandezzaMemoria = grandezzaMemoria;
         }
     
-        // metodo smartphone unfo
-        public String getSmartphoneInfo(){
-            return "Smartphone:" + getInfo() + " " + grandezzaMemoria + "GB" + " " + "CodiceIMEI-" + codiceIMEI;
+        // metodo smartphone info
+        @Override
+        public String toString(){
+            return "Smartphone:" + super.toString() + " " + grandezzaMemoria + "GB" + " " + "CodiceIMEI-" + codiceIMEI;
         }
     }
 

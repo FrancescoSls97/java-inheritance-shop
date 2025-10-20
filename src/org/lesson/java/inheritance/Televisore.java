@@ -39,7 +39,8 @@ public class Televisore extends Prodotto {
 
 
     // metodo info televisore
-    public String getTeleInfo() {
-        return "TV: " + getInfo() + " " + getPollici() + "pollici " + "SmartTV:" + getSmartText();
+    @Override
+    public String toString() {
+        return "TV: " + super.toString() + " " + getPollici() + "pollici " + "SmartTV:" + getSmartText();
     }
 }
