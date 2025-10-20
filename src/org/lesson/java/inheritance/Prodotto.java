@@ -5,80 +5,76 @@ import java.util.Random;
 // superclasse prodotto
 public class Prodotto {
 
-    //attributi di classe
-    protected int codiceProdotto;
-    protected String nome;
-    protected String marca;
-    protected double prezzo;
-    protected int iva;
+   // attributi di classe
+   protected int codiceProdotto;
+   protected String nome;
+   protected String marca;
+   protected double prezzo;
+   protected int iva;
 
-    //costruttore
-    public Prodotto (String nome, String marca, double prezzo, int iva){
-        Random random = new Random();
-        this.codiceProdotto = random.nextInt(99999);
-        this.nome = nome;
-        this.marca = marca;
-        this.prezzo = prezzo;
-        this.iva = iva;
-    }
+   // costruttore
+   public Prodotto(String nome, String marca, double prezzo, int iva) {
+      Random random = new Random();
+      this.codiceProdotto = random.nextInt(99999);
+      this.nome = nome;
+      this.marca = marca;
+      this.prezzo = prezzo;
+      this.iva = iva;
+   }
 
    // getter e setter codice
 
-   public int getCodiceProdotto(){
-    return this.codiceProdotto;
-   }
-
-   private void setCodice(int codice){
-    this.codiceProdotto = codice;
+   public int getCodiceProdotto() {
+      return this.codiceProdotto;
    }
 
    // getter e setter nome
 
-   public String getNome(){
-    return this.nome;
+   public String getNome() {
+      return this.nome;
    }
 
-   public void setNome(String nome){
-    this.nome = nome;
+   public void setNome(String nome) {
+      this.nome = nome;
    }
 
    // getter e setter marca
 
-      public String getMarca(){
-    return this.marca;
+   public String getMarca() {
+      return this.marca;
    }
 
-   public void setMarca(String marca){
-    this.marca = marca;
+   public void setMarca(String marca) {
+      this.marca = marca;
    }
 
    // getter e setter prezzo
 
-      public double getPrezzo(){
-    return this.prezzo;
+   public double getPrezzo() {
+      return this.prezzo;
    }
 
-   public void setPrezzo(double prezzo){
-    this.prezzo = prezzo;
+   public void setPrezzo(double prezzo) {
+      this.prezzo = prezzo;
    }
 
    // getter e setter iva
-      public int getIva(){
-    return this.iva;
+   public int getIva() {
+      return this.iva;
    }
 
-   public void setIva(int iva){
-    this.iva = iva;
+   public void setIva(int iva) {
+      this.iva = iva;
    }
 
-   //metodo calcolo prezzo
-   public double getPrezzoTotale(){
-    return prezzo + (prezzo * iva / 100);
+   // metodo calcolo prezzo
+   public double getPrezzoTotale() {
+      return prezzo + (prezzo * iva / 100);
    }
 
-   //metodo info prodotto
-   public String getInfo(){
-    return "Codice Prodotto-" 
-    + codiceProdotto + " " + nome + " " + marca + " " + getPrezzoTotale() + "$";
+   // metodo info prodotto
+   public String getInfo() {
+      return "Codice Prodotto-"
+            + codiceProdotto + " " + nome + " " + marca + " " + getPrezzoTotale() + "$";
    }
 }
