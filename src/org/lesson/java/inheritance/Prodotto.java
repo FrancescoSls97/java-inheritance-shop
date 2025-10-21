@@ -1,25 +1,27 @@
 package org.lesson.java.inheritance;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 // superclasse prodotto
 public class Prodotto {
 
    // attributi di classe
-   protected int codiceProdotto;
-   protected String nome;
-   protected String marca;
-   protected double prezzo;
-   protected int iva;
+   private int codiceProdotto;
+   private String nome;
+   private String marca;
+   private BigDecimal prezzo;
+   private BigDecimal iva;
 
    // costruttore
-   public Prodotto(String nome, String marca, double prezzo, int iva) {
+   public Prodotto(String nome, String marca, BigDecimal prezzo) {
       Random random = new Random();
       this.codiceProdotto = random.nextInt(99999);
       this.nome = nome;
       this.marca = marca;
       this.prezzo = prezzo;
-      this.iva = iva;
+      this.iva = new BigDecimal(0.22);
    }
 
    // getter e setter codice
@@ -50,32 +52,31 @@ public class Prodotto {
 
    // getter e setter prezzo
 
-   public double getPrezzo() {
+   public BigDecimal getPrezzo() {
       return this.prezzo;
    }
 
-   public void setPrezzo(double prezzo) {
+   public void setPrezzo(BigDecimal prezzo) {
       this.prezzo = prezzo;
    }
 
-   // getter e setter iva
-   public int getIva() {
+   // getter iva
+   public BigDecimal getIva() {
       return this.iva;
    }
 
-   public void setIva(int iva) {
-      this.iva = iva;
-   }
-
    // metodo calcolo prezzo
-   public double getPrezzoTotale() {
-      return prezzo + (prezzo * iva / 100);
+   public BigDecimal getPrezzoTotale() {
+      if (prezzo != null && iva != null ){
+         return prezzo.add(prezzo.multiply(iva)).setScale(2, RoundingMode.DOWN);
+         }
+      return null;
    }
 
    // metodo info prodotto
    @Override
    public String toString() {
       return "Codice Prodotto-"
-            + codiceProdotto + " " + nome + " " + marca + " " + getPrezzoTotale() + "$";
+            + codiceProdotto + " " + nome + "\n" + marca + "\n" + getPrezzoTotale() + "$";
    }
 }

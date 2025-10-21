@@ -1,12 +1,14 @@
 package org.lesson.java.inheritance;
 
+import java.math.BigDecimal;
+
 public class Televisore extends Prodotto {
     // attributi specifici di classe
     protected int pollici;
     protected boolean smart;
 
-    public Televisore(String nome, String marca, double prezzo, int iva, int pollici, boolean smart) {
-        super(nome, marca, prezzo, iva);
+    public Televisore(String nome, String marca, BigDecimal prezzo, int pollici, boolean smart) {
+        super(nome, marca, prezzo);
         this.pollici = pollici;
         this.smart = smart;
 
@@ -41,6 +43,6 @@ public class Televisore extends Prodotto {
     // metodo info televisore
     @Override
     public String toString() {
-        return "TV: " + super.toString() + " " + getPollici() + "pollici " + "SmartTV:" + getSmartText();
+        return "TV: " + super.toString() + "\n" + getPollici() + "pollici " + "\nSmartTV:" + getSmartText();
     }
 }

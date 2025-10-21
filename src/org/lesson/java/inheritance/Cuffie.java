@@ -1,13 +1,15 @@
 package org.lesson.java.inheritance;
 
+import java.math.BigDecimal;
+
 public class Cuffie extends Prodotto {
 
     // attributi di classe
     protected String colore;
     protected boolean wireless;
 
-    public Cuffie(String nome, String marca, double prezzo, int iva, String colore, boolean wireless) {
-        super(nome, marca, prezzo, iva);
+    public Cuffie(String nome, String marca, BigDecimal prezzo, String colore, boolean wireless) {
+        super(nome, marca, prezzo);
         this.colore = colore;
         this.wireless = wireless;
     }
@@ -39,6 +41,6 @@ public class Cuffie extends Prodotto {
     // metodo info cuffie
     @Override
     public String toString() {
-        return "Cuffie: " + super.toString() + " Colore:" + getColore() + " Modello:" + getWirelessText();
+        return "Cuffie: " + super.toString() + "\nColore:" + getColore() + "\nModello:" + getWirelessText();
     }
 }

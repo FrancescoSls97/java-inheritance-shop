@@ -1,28 +1,28 @@
 package org.lesson.java.inheritance;
 
-import java.util.Random;
+import java.math.BigDecimal;
 
-public class Smarthphone extends Prodotto{
+
+public class Smartphone extends Prodotto{
     // attributi classe specifici
-    protected int codiceIMEI;
+    protected int imei;
     protected int grandezzaMemoria;
 
     //costruttore 
-    public Smarthphone(String nome, String marca, double prezzo, int iva, int grandezzaMemoria){
-        super(nome, marca, prezzo, iva);
-        Random random = new Random();
-        this.codiceIMEI = random.nextInt(99999);
+    public Smartphone(String nome, String marca, BigDecimal prezzo, int grandezzaMemoria, int imei){
+        super(nome, marca, prezzo);
+        this.imei = imei;
         this.grandezzaMemoria = grandezzaMemoria;
 
         }
 
         //getter e setter codice IMEI
         public int getCodiceIMEI(){
-            return this.codiceIMEI;
+            return this.imei;
         }
 
-        public void setCodiceIMEI(int codiceIMEI){
-            this.codiceIMEI = codiceIMEI;
+        public void setCodiceIMEI(int imei){
+            this.imei = imei;
         }
 
         //getter e setter grandezza nemoria
@@ -38,7 +38,7 @@ public class Smarthphone extends Prodotto{
         // metodo smartphone info
         @Override
         public String toString(){
-            return "Smartphone:" + super.toString() + " " + grandezzaMemoria + "GB" + " " + "CodiceIMEI-" + codiceIMEI;
+            return "Smartphone:" + super.toString() + "\n" + grandezzaMemoria + "GB" + "\n" + "CodiceIMEI-" + imei;
         }
     }
 
