@@ -73,6 +73,13 @@ public class Prodotto {
       return null;
    }
 
+   //metodo calcolo sconto
+   public BigDecimal getSconto(){
+      //sconto minimo del 2%
+      return prezzo.subtract(prezzo.multiply(new BigDecimal("0.02")));
+
+   }
+
    // metodo info prodotto
    @Override
    public String toString() {

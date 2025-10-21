@@ -1,6 +1,7 @@
 package org.lesson.java.inheritance;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Carrello {
@@ -67,13 +68,22 @@ public class Carrello {
             System.out.println("-------------");
 
         }
+        System.out.println("Hai la nostra tessera fedeltá? TRUE o FALSE");
+        boolean tessera = Boolean.parseBoolean(input.nextLine());
+
         input.close();
 
+        BigDecimal totale = BigDecimal.ZERO;
         System.out.println("Il tuo carrello:");
 
         for (int i = 0; i < prodotti.length; i++) {
             System.out.println(prodotti[i]);
+            BigDecimal prezzoFinale = tessera ? prodotti[i].getSconto() : prodotti[i].getPrezzo();
+            totale = totale.add(prezzoFinale);
+            System.out.println("Prezzo finale: " + prezzoFinale.setScale(2, RoundingMode.HALF_UP) + "$");
             System.out.println("-------------");
+            System.out.println("Totale carrello: " + totale.setScale(2, RoundingMode.HALF_UP) + "$");
+
         }
     }
 }

@@ -38,7 +38,16 @@ public class Televisore extends Prodotto {
     return this.smart ? "Si" : "No";
 }
 
-
+     //metodo calcolo sconto
+        @Override
+        public BigDecimal getSconto(){
+             if (!smart) {
+                return
+                getPrezzo().subtract(getPrezzo().multiply(new BigDecimal(0.10)));
+            } else {
+                return getSconto();
+            }
+        }
 
     // metodo info televisore
     @Override

@@ -38,6 +38,16 @@ public class Cuffie extends Prodotto {
         return this.wireless ? "Wireless" : "Cablato";
     }
 
+     //metodo calcolo sconto
+        @Override
+        public BigDecimal getSconto(){
+             if (!wireless) {
+                return
+                getPrezzo().subtract(getPrezzo().multiply(new BigDecimal(0.07)));
+            } else {
+                return getSconto();
+            }
+        }
     // metodo info cuffie
     @Override
     public String toString() {

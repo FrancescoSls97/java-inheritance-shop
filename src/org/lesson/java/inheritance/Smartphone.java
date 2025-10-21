@@ -34,7 +34,17 @@ public class Smartphone extends Prodotto{
         public void setGrandezzaMemoria(int grandezzaMemoria){
             this.grandezzaMemoria = grandezzaMemoria;
         }
-    
+
+        //metodo calcolo sconto
+        @Override
+        public BigDecimal getSconto(){
+             if (grandezzaMemoria < 32) {
+                return
+                getPrezzo().subtract(getPrezzo().multiply(new BigDecimal(0.05)));
+            } else {
+                return getSconto();
+            }
+        }
         // metodo smartphone info
         @Override
         public String toString(){
